@@ -8,7 +8,7 @@ import type {
   TestSuiteResponse,
 } from '../types';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const BASE_URL = import.meta.env.VITE_API_URL || '';
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -69,5 +69,4 @@ export const startWebCall = (customerName?: string) =>
   api.post('/api/voice/web-call', { customer_name: customerName }).then(r => r.data);
 
 export const healthCheck = () =>
-  api.get('/health').then(r => r.data);
-
+  api.get('/api/health').then(r => r.data);

@@ -29,7 +29,7 @@ app.include_router(tests.router)
 app.include_router(webhooks.router)
 app.include_router(voice.router)
 
-@app.get("/health", tags=["System"])
+@app.get("/api/health", tags=["System"])
 def health_check():
     """Health check endpoint."""
     return {

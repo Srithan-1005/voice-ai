@@ -25,7 +25,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate }) => {
       setAnalytics(an);
       setRecentCalls(calls.calls.slice(0, 6));
     } catch (e) {
-      setError('Cannot reach backend. Make sure the server is running at localhost:8000.');
+      setError('Cannot reach the backend. Check that the backend service is available and try again.');
     } finally {
       setLoading(false);
     }
