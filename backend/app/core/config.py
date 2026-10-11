@@ -2,6 +2,7 @@ from pydantic_settings import BaseSettings
 from pydantic import Field
 from typing import List
 import os
+from pathlib import Path
 
 class Settings(BaseSettings):
     APP_NAME: str = "Home Credit LAP Voice Qualification Agent"
@@ -41,7 +42,7 @@ class Settings(BaseSettings):
     DATABASE_PATH: str = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data", "lap_voice_agent.db")
 
     class Config:
-        env_file = ".env"
+        env_file = Path(__file__).resolve().parents[3] / ".env"
         env_file_encoding = "utf-8"
         extra = "ignore"
 
