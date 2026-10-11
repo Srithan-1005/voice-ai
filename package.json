@@ -1,0 +1,14 @@
+{
+  "name": "voice-ai-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Home Credit LAP Qualification Voice Agent",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "frontend": "npm --prefix frontend run dev",
+    "backend": "powershell -Command \".venv\\Scripts\\python.exe -m uvicorn app.main:app --app-dir backend --reload --port 8000\"",
+    "test": "powershell -Command \".venv\\Scripts\\python.exe -m pytest backend/app/tests/ -v\""
+  }
+}
